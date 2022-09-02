@@ -20,7 +20,7 @@ CAM is an acronym for Crypto Asset Manager. In CAM potential users will be able 
 #### [Trello Board](https://trello.com/b/wV1frwGR/cam)  
 [Component Hierarchy Diagram](https://i.imgur.com/dU9uAgg.png) ![](https://i.imgur.com/dU9uAgg.png)
  
- [ERD](https://i.imgur.com/kUGZQ2O.png) ![](https://i.imgur.com/kUGZQ2O.png)
+ [ERD](https://i.imgur.com/XUm1D1T.png) ![](https://i.imgur.com/XUm1D1T.png)
 
 
 ---
