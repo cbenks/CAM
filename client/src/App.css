@@ -1,8 +1,17 @@
-/* nav */
+/* NAV */
 
 .nav{
   display: flex;
   align-items: center;
   font-size: 1em;
+}
+
+.logo{
+  width: 15%;
+  border-radius: 8%;
+}
+
+nav a {
+  margin: auto 1em;
 }
 

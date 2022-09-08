@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 const Nav = ({ authenticated }) => {
 
   let authenticatedOptions = (
-    <nav>
+    <nav className='nav'>
       <h3>Welcome</h3>
       <Link to="/">Home</Link>
       <Link to="/assets">Assets</Link>
@@ -12,7 +12,7 @@ const Nav = ({ authenticated }) => {
   )
   
   let publicOptions = (
-    <nav>
+    <nav className='nav'>
       <Link to="/">Home</Link>
       <Link to ="/register">Sign Up</Link>
       <Link to="/login">Log In</Link>
@@ -21,6 +21,7 @@ const Nav = ({ authenticated }) => {
 
   return(
     <header className='nav'>
+      <img className='logo' src='https://freelogocreator.com/user_design/logos/2022/09/08/67545-medium.png' />
       {authenticated ? authenticatedOptions : publicOptions}
     </header>
   )
