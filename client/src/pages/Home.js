@@ -1,6 +1,6 @@
 import Login from './Login'
 
-const Home = ({ authenticated }) => {
+const Home = ({ authenticated, toggleAuthenticated }) => {
   const authenticatedOptions = (
     <div>
       <h2>You have been authenticated</h2>
@@ -9,7 +9,7 @@ const Home = ({ authenticated }) => {
 
   const publicOptions = (
     <div>
-      <Login />
+      <Login toggleAuthenticated={toggleAuthenticated} />
     </div>
   )
 

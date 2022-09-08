@@ -12,7 +12,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setFormValues({ email: '', password: '' })
-    navigate('/home')
+    navigate('/')
   }
 
   return (
