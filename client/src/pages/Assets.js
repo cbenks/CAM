@@ -1,4 +1,4 @@
-const Assets = () => {
+const Assets = ({ authenticated }) => {
   return (
     <div>
       <h3>your cryptos and nfts will be listed here</h3>
