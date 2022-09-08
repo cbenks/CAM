@@ -14,9 +14,15 @@ function App() {
       <Nav authenticated={authenticated} />
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/assets" element={<Assets />} />
-          <Route path="/register" element={<Register />} />
+          <Route path="/" element={<Home authenticated={authenticated} />} />
+          <Route
+            path="/assets"
+            element={<Assets authenticated={authenticated} />}
+          />
+          <Route
+            path="/register"
+            element={<Register authenticated={authenticated} />}
+          />
         </Routes>
       </main>
     </div>
