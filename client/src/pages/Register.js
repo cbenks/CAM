@@ -45,7 +45,7 @@ const Register = () => {
               onChange={handleChange}
               name="email"
               id="email"
-              type="text"
+              type="email"
               value={formValues.email}
               required
             />
@@ -56,7 +56,7 @@ const Register = () => {
               onChange={handleChange}
               name="password"
               id="password"
-              type="text"
+              type="password"
               value={formValues.password}
               required
             />
@@ -67,7 +67,7 @@ const Register = () => {
               onChange={handleChange}
               name="confirmPassword"
               id="confirmPassword"
-              type="text"
+              type="password"
               value={formValues.confirmPassword}
               required
             />

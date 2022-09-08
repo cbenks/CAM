@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const Login = () => {
+const Login = ({toggleAuthenticated}) => {
   let navigate = useNavigate()
   const [formValues, setFormValues] = useState({ email: '', password: '' })
 
@@ -12,12 +12,25 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setFormValues({ email: '', password: '' })
+    toggleAuthenticated(true)
     navigate('/')
   }
 
   return (
     <div>
-      <h1>I will be on the home page to login</h1>
+      <div>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="email">Email</label>
+            <input onChange={handleChange} name="email" type="email" id="email" value={formValues.password} required />
+          </div>
+          <div>
+            <label htmlFor="password">Password</label>
+            <input onChange={handleChange}  name="password" type="password" id="password" value={formValues.password} required />
+          </div>
+          <button disabled={!formValues.email || !formValues.password}>Login</button>
+        </form>
+      </div>
     </div>
   )
 }

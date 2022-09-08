@@ -20,7 +20,7 @@ const Nav = ({ authenticated }) => {
 
   return(
     <header className='nav'>
-      <img className='logo' src='https://freelogocreator.com/user_design/logos/2022/09/08/67545-medium.png' />
+      <img className='logo' alt="crypto management logo" src='https://freelogocreator.com/user_design/logos/2022/09/08/67545-medium.png' />
       {authenticated ? authenticatedOptions : publicOptions}
     </header>
   )
