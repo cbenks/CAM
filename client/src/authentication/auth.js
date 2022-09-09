@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export const BASE_URL = 'http://localhost:3001'
 
-const Client = Axios.create({ baseURL: BASE_URL })
+const Client = axios.create({ baseURL: BASE_URL })
 
 Client.interceptors.request.use(
   (config) => {
@@ -38,7 +38,7 @@ export const RegisterUser = async (data) => {
 
 export const CheckSession = async () => {
   try {
-    const res = await Client.get('/auth/session')
+    const res = await Client.get('auth/session')
     return res.data
   } catch (error) {
     throw error
