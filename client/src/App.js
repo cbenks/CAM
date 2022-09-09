@@ -5,6 +5,7 @@ import Register from './pages/Register'
 import './App.css'
 import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
+import { CheckSession, RegisterUser } from './authentication/auth'
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -16,7 +17,17 @@ function App() {
     localStorage.clear()
   }
 
-  const checkToken = async () => {}
+  const checkToken = async () => {
+    const theUser = await CheckSession()
+    const id = localStorage.getItem('id')
+    const email = localStorage.getItem('email')
+    setUser({
+      user,
+      id,
+      email
+    })
+    toggleAuthenticated(true)
+  }
 
   return (
     <div>
