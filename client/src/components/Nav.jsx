@@ -1,11 +1,11 @@
 import {Link} from 'react-router-dom'
 
-const Nav = ({ authenticated, handleLogout, user, username, setUsername }) => {
+const Nav = ({ authenticated, handleLogout, user, username }) => {
 
 
   let authenticatedOptions = (
     <nav className='nav'>
-      <h3>Welcome</h3>
+      <h3>Welcome {username}</h3>
       <Link to="/assets">Assets</Link>
       <Link to="/news">News</Link>
     </nav>

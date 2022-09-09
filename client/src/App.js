@@ -2,6 +2,7 @@ import Nav from './components/Nav'
 import Home from './pages/Home'
 import Assets from './pages/Assets'
 import Register from './pages/Register'
+import Client from './authentication/auth'
 import './App.css'
 import { useEffect, useState } from 'react'
 import { Route, Routes, useNavigate } from 'react-router-dom'
@@ -32,12 +33,19 @@ function App() {
     toggleAuthenticated(true)
   }
 
+  const getUsername = async () => {
+    if(user && authenticated) {
+      const singleUser = await 
+    }
+  }
+
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (token) {
       checkToken()
     }
-  }, [])
+
+  }, [user])
 
   return (
     <div>
@@ -45,7 +53,6 @@ function App() {
         authenticated={authenticated}
         handleLogout={handleLogout}
         username={username}
-        setUsername={setUsername}
       />
       <main>
         <Routes>
