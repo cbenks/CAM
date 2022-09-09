@@ -34,8 +34,11 @@ function App() {
   }
 
   const getUsername = async () => {
-    if(user && authenticated) {
-      const singleUser = await 
+    if (user && authenticated) {
+      const singleUser = await Client.get(`user/${user.id}`)
+      localStorage.setItem('username', singleUser.data.username)
+      const savedUsername = localStorage.getItem('username')
+      setUsername(savedUsername)
     }
   }
 
@@ -44,7 +47,6 @@ function App() {
     if (token) {
       checkToken()
     }
-
   }, [user])
 
   return (
