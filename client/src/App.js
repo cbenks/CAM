@@ -21,6 +21,7 @@ function App() {
               <Home
                 authenticated={authenticated}
                 toggleAuthenticated={toggleAuthenticated}
+                setUser={setUser}
               />
             }
           />

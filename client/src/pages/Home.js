@@ -1,6 +1,6 @@
 import Login from '../components/Login'
 
-const Home = ({ authenticated, toggleAuthenticated }) => {
+const Home = ({ authenticated, toggleAuthenticated, setUser }) => {
   const authenticatedOptions = (
     <div>
       <h2>You have been authenticated</h2>
@@ -9,7 +9,7 @@ const Home = ({ authenticated, toggleAuthenticated }) => {
 
   const publicOptions = (
     <div>
-      <Login toggleAuthenticated={toggleAuthenticated} />
+      <Login toggleAuthenticated={toggleAuthenticated} setUser={setUser} />
     </div>
   )
 
