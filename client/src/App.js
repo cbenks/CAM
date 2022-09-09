@@ -4,18 +4,20 @@ import Assets from './pages/Assets'
 import Register from './pages/Register'
 import './App.css'
 import { useEffect, useState } from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useNavigate } from 'react-router-dom'
 import { CheckSession } from './authentication/auth'
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState({})
   const [username, setUsername] = useState('')
+  let navigate = useNavigate()
 
   const handleLogout = () => {
     setUser({})
     toggleAuthenticated(false)
     localStorage.clear()
+    navigate('/')
   }
 
   const checkToken = async () => {
