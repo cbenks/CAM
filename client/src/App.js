@@ -16,6 +16,8 @@ function App() {
     localStorage.clear()
   }
 
+  const checkToken = async () => {}
+
   return (
     <div>
       <Nav authenticated={authenticated} />
