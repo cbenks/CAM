@@ -1,11 +1,11 @@
 import {Link} from 'react-router-dom'
 
-const Nav = ({ authenticated }) => {
+const Nav = ({ authenticated, handleLogout, user, username, setUsername }) => {
+
 
   let authenticatedOptions = (
     <nav className='nav'>
       <h3>Welcome</h3>
-      <Link to="/">Home</Link>
       <Link to="/assets">Assets</Link>
       <Link to="/news">News</Link>
     </nav>
@@ -13,15 +13,17 @@ const Nav = ({ authenticated }) => {
   
   let publicOptions = (
     <nav className='nav'>
-      <Link to="/">Home</Link>
       <Link to ="/register">Sign Up</Link>
+      <button onClick={handleLogout} >Log Out</button>
     </nav>
   )
 
   return(
     <header className='nav'>
-      <img className='logo' alt="crypto management logo" src='https://freelogocreator.com/user_design/logos/2022/09/08/67545-medium.png' />
-      {authenticated ? authenticatedOptions : publicOptions}
+      <Link to="/">
+        <img className='logo' alt="crypto management logo" src='https://freelogocreator.com/user_design/logos/2022/09/08/67545-medium.png' />
+      </Link>
+      {authenticated && user ? authenticatedOptions : publicOptions}
     </header>
   )
 }

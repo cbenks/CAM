@@ -10,8 +10,9 @@ import { CheckSession } from './authentication/auth'
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState({})
+  const [username, setUsername] = useState('')
 
-  const handleLogOut = () => {
+  const handleLogout = () => {
     setUser({})
     toggleAuthenticated(false)
     localStorage.clear()
@@ -22,7 +23,7 @@ function App() {
     const id = localStorage.getItem('id')
     const email = localStorage.getItem('email')
     setUser({
-      user,
+      theUser,
       id,
       email
     })
@@ -38,7 +39,12 @@ function App() {
 
   return (
     <div>
-      <Nav authenticated={authenticated} />
+      <Nav
+        authenticated={authenticated}
+        handleLogout={handleLogout}
+        username={username}
+        setUsername={setUsername}
+      />
       <main>
         <Routes>
           <Route
@@ -46,6 +52,7 @@ function App() {
             element={
               <Home
                 authenticated={authenticated}
+                user={user}
                 toggleAuthenticated={toggleAuthenticated}
                 setUser={setUser}
               />
