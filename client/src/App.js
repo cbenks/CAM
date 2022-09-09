@@ -3,9 +3,9 @@ import Home from './pages/Home'
 import Assets from './pages/Assets'
 import Register from './pages/Register'
 import './App.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { CheckSession, RegisterUser } from './authentication/auth'
+import { CheckSession } from './authentication/auth'
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -28,6 +28,13 @@ function App() {
     })
     toggleAuthenticated(true)
   }
+
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    if (token) {
+      checkToken()
+    }
+  }, [])
 
   return (
     <div>
