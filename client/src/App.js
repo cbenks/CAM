@@ -8,7 +8,13 @@ import { Route, Routes } from 'react-router-dom'
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState({})
+
+  const handleLogOut = () => {
+    setUser({})
+    toggleAuthenticated(false)
+    localStorage.clear()
+  }
 
   return (
     <div>
