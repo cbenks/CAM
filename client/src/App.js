@@ -47,6 +47,7 @@ function App() {
     if (token) {
       checkToken()
     }
+    getUsername()
   }, [user])
 
   return (
