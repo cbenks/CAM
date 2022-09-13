@@ -1,6 +1,5 @@
 import Nav from './components/Nav'
 import AddCrypto from './components/AddCrypto'
-import Update from './components/Update'
 import Home from './pages/Home'
 import Assets from './pages/Assets'
 import News from './pages/News'
@@ -92,7 +91,6 @@ function App() {
             path="/add"
             element={<AddCrypto authenticated={authenticated} user={user} />}
           />
-          <Route path="/update" element={<Update />} />
         </Routes>
       </main>
     </div>

@@ -5,8 +5,6 @@ import { useState, useEffect } from 'react'
 const Assets = ({ authenticated, user, username }) => {
   const [crypto, setCrypto] = useState([])
   const [nft, setNft] = useState([])
-  const [edit, toggleEdit] = useState(false)
-
   useEffect(() => {
     const showCrypto = async () => {
       const res = await Client.get(`/crypto/${user.id}`)
@@ -32,6 +30,7 @@ const Assets = ({ authenticated, user, username }) => {
     <div>
       <div>
         <h3>User {username}'s Crypto</h3>
+
         {crypto.map((crypto) => (
           <div key={crypto.id}>
             <span>{crypto.amount} </span>
@@ -45,7 +44,7 @@ const Assets = ({ authenticated, user, username }) => {
             >
               x
             </button>
-            <Link to="/update">Edit</Link>
+            <button>Edit</button>
           </div>
         ))}
         <h3>Nfts</h3>
