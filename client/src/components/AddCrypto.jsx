@@ -1,7 +1,10 @@
 import Client from '../authentication/auth'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const AddCrypto = ({ authenticated, user }) => {
+
+  const navigate = useNavigate()
 
   const [cryptoForm, setCryptoForm] = useState({
     name: '',
@@ -33,6 +36,7 @@ const AddCrypto = ({ authenticated, user }) => {
       name: '',
       amount: 0
     })
+    navigate('/assets')
   }
 
   const handleSubmitNft = async (e) => {
@@ -48,6 +52,7 @@ const AddCrypto = ({ authenticated, user }) => {
       name: '',
       photo: ''
     })
+    navigate('/assets')
   }
 
   let publicOptions =(

@@ -31,7 +31,7 @@ const Assets = ({ authenticated, user, username }) => {
     <div>
       <h2>you are authenticated</h2>
       <div>
-        <h3>{username}'s assets: Crypto</h3>
+        <h3>{username} Crypto</h3>
         {crypto.map((crypto) => (
           <div key={crypto.id}>
             <span>{crypto.amount} </span>
