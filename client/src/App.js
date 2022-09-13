@@ -25,14 +25,16 @@ function App() {
 
   const checkToken = async () => {
     const theUser = await CheckSession()
-    const id = localStorage.getItem('id')
+    const num = localStorage.getItem('id')
+    const id = parseInt(num)
     const email = localStorage.getItem('email')
+    const username = localStorage.getItem('username')
+    setUsername(username)
     setUser({
       theUser,
       id,
       email
     })
-    console.log(user)
     toggleAuthenticated(true)
   }
 
@@ -41,15 +43,6 @@ function App() {
     if (token) {
       checkToken()
     }
-    const getUsername = async () => {
-      if (user && authenticated) {
-        const singleUser = await Client.get(`user/${user.id}`)
-        localStorage.setItem('username', singleUser.data.username)
-        const savedUsername = localStorage.getItem('username')
-        setUsername(savedUsername)
-      }
-    }
-    getUsername()
   }, [])
 
   return (

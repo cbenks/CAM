@@ -29,21 +29,36 @@ const Assets = ({ authenticated, user, username }) => {
   )
   const authenticatedOptions = (
     <div>
-      <h2>you are authenticated</h2>
       <div>
-        <h3>{username} Crypto</h3>
+        <h3>User {username}'s Crypto</h3>
         {crypto.map((crypto) => (
           <div key={crypto.id}>
             <span>{crypto.amount} </span>
-            <span> {crypto.name}</span>
+            <span> {crypto.name} </span>
+            <button
+              onClick={async () => {
+                const cryptoDelete = parseInt(crypto.id)
+                await Client.delete(`/crypto/${cryptoDelete}`)
+              }}
+            >
+              x
+            </button>
           </div>
         ))}
-        <h4>Nfts</h4>
+        <h3>Nfts</h3>
         {nft.map((nft) => (
           <div key={nft.id}>
             <h3>{nft.name}</h3>
             <img src={nft.photo} alt="" />
-            <h4>{nft.blockchain}</h4>
+            <h4>{nft.blockchain} </h4>
+            <button
+              onClick={async () => {
+                const nftDelete = parseInt(nft.id)
+                await Client.delete(`/nft/${nftDelete}`)
+              }}
+            >
+              x
+            </button>
           </div>
         ))}
         <h3>
@@ -53,12 +68,7 @@ const Assets = ({ authenticated, user, username }) => {
     </div>
   )
 
-  return (
-    <div>
-      <h3>your cryptos and nfts will be listed here</h3>
-      {authenticated ? authenticatedOptions : publicOptions}
-    </div>
-  )
+  return <div>{authenticated ? authenticatedOptions : publicOptions}</div>
 }
 
 export default Assets
