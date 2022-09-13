@@ -39,10 +39,12 @@ const Assets = ({ authenticated, user, username }) => {
               onClick={async () => {
                 const cryptoDelete = parseInt(crypto.id)
                 await Client.delete(`/crypto/${cryptoDelete}`)
+                document.location.reload()
               }}
             >
               x
             </button>
+            <Link to="/update">Edit</Link>
           </div>
         ))}
         <h3>Nfts</h3>
@@ -55,6 +57,7 @@ const Assets = ({ authenticated, user, username }) => {
               onClick={async () => {
                 const nftDelete = parseInt(nft.id)
                 await Client.delete(`/nft/${nftDelete}`)
+                document.location.reload()
               }}
             >
               x

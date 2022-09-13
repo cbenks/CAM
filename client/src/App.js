@@ -1,5 +1,6 @@
 import Nav from './components/Nav'
 import AddCrypto from './components/AddCrypto'
+import Update from './components/Update'
 import Home from './pages/Home'
 import Assets from './pages/Assets'
 import News from './pages/News'
@@ -28,8 +29,6 @@ function App() {
     const num = localStorage.getItem('id')
     const id = parseInt(num)
     const email = localStorage.getItem('email')
-    const username = localStorage.getItem('username')
-    setUsername(username)
     setUser({
       theUser,
       id,
@@ -38,11 +37,20 @@ function App() {
     toggleAuthenticated(true)
   }
 
-  useEffect(() => {
+  useEffect((user, authenticated) => {
     const token = localStorage.getItem('token')
     if (token) {
       checkToken()
     }
+    const getUsername = async () => {
+      if (user && authenticated) {
+        const singleUser = await Client.get(`/user/${user.id}`)
+        localStorage.setItem('username', singleUser.data.username)
+        const getSavedUsername = localStorage.getItem('username')
+        setUsername(getSavedUsername)
+      }
+    }
+    getUsername()
   }, [])
 
   return (
@@ -84,6 +92,7 @@ function App() {
             path="/add"
             element={<AddCrypto authenticated={authenticated} user={user} />}
           />
+          <Route path="/update" element={<Update />} />
         </Routes>
       </main>
     </div>

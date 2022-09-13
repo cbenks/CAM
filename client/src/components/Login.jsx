@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { SignInUser } from '../authentication/auth'
+import { LoginUser } from '../authentication/auth'
 
 const Login = ({toggleAuthenticated, setUser}) => {
   let navigate = useNavigate()
@@ -12,7 +12,7 @@ const Login = ({toggleAuthenticated, setUser}) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const userDetails = await SignInUser(formValues)
+    const userDetails = await LoginUser(formValues)
     setFormValues({ email: '', password: '' })
     setUser(userDetails)
     toggleAuthenticated(true)
