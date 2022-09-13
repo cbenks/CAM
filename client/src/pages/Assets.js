@@ -33,19 +33,22 @@ const Assets = ({ authenticated, user, username }) => {
       <div>
         <h3>{username}'s assets: Crypto</h3>
         {crypto.map((crypto) => (
-          <div>
+          <div key={crypto.id}>
             <span>{crypto.amount} </span>
             <span> {crypto.name}</span>
           </div>
         ))}
         <h4>Nfts</h4>
         {nft.map((nft) => (
-          <div>
-            <span>{nft.name}</span>
-            <img src={nft.photo} />
+          <div key={nft.id}>
+            <h3>{nft.name}</h3>
+            <img src={nft.photo} alt="" />
             <h4>{nft.blockchain}</h4>
           </div>
         ))}
+        <h3>
+          Add more assets <Link to="/add">HERE</Link>
+        </h3>
       </div>
     </div>
   )

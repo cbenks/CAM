@@ -1,4 +1,5 @@
 import Nav from './components/Nav'
+import AddCrypto from './components/AddCrypto'
 import Home from './pages/Home'
 import Assets from './pages/Assets'
 import News from './pages/News'
@@ -86,6 +87,10 @@ function App() {
             element={<News authenticated={authenticated} />}
           />
           <Route path="/register" element={<Register />} />
+          <Route
+            path="/add"
+            element={<AddCrypto authenticated={authenticated} />}
+          />
         </Routes>
       </main>
     </div>
