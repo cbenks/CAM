@@ -73,7 +73,13 @@ function App() {
           />
           <Route
             path="/assets"
-            element={<Assets authenticated={authenticated} user={user} />}
+            element={
+              <Assets
+                authenticated={authenticated}
+                user={user}
+                username={username}
+              />
+            }
           />
           <Route
             path="/news"

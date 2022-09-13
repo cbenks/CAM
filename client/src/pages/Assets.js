@@ -2,7 +2,7 @@ import Client from '../authentication/auth'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
-const Assets = ({ authenticated, user }) => {
+const Assets = ({ authenticated, user, username }) => {
   const [crypto, setCrypto] = useState([])
   const [nft, setNft] = useState([])
 
@@ -30,6 +30,23 @@ const Assets = ({ authenticated, user }) => {
   const authenticatedOptions = (
     <div>
       <h2>you are authenticated</h2>
+      <div>
+        <h3>{username}'s assets: Crypto</h3>
+        {crypto.map((crypto) => (
+          <div>
+            <span>{crypto.amount} </span>
+            <span> {crypto.name}</span>
+          </div>
+        ))}
+        <h4>Nfts</h4>
+        {nft.map((nft) => (
+          <div>
+            <span>{nft.name}</span>
+            <img src={nft.photo} />
+            <h4>{nft.blockchain}</h4>
+          </div>
+        ))}
+      </div>
     </div>
   )
 
