@@ -33,21 +33,20 @@ function App() {
     toggleAuthenticated(true)
   }
 
-  const getUsername = async () => {
-    if (user && authenticated) {
-      const singleUser = await Client.get(`user/${user.id}`)
-      localStorage.setItem('username', singleUser.data.username)
-      const savedUsername = localStorage.getItem('username')
-      setUsername(savedUsername)
-    }
-  }
-
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (token) {
       checkToken()
     }
-    getUsername()
+    // const getUsername = async () => {
+    //   if (user && authenticated) {
+    //     const singleUser = await Client.get(`user/${user.id}`)
+    //     localStorage.setItem('username', singleUser.data.username)
+    //     const savedUsername = localStorage.getItem('username')
+    //     setUsername(savedUsername)
+    //   }
+    // }
+    // getUsername()
   }, [user])
 
   return (

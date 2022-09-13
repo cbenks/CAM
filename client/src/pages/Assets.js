@@ -1,4 +1,4 @@
-import Client from '../authentication/auth'
+// import Client from '../authentication/auth'
 
 const Assets = ({ authenticated }) => {
   const authenticatedOptions = (

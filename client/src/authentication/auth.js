@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export const BASE_URL = 'http://localhost:8000'
+export const BASE_URL = 'http://localhost:3001'
 
 const Client = axios.create({ baseURL: BASE_URL })
 
@@ -15,11 +15,9 @@ Client.interceptors.request.use(
   (error) => Promise.reject(error)
 )
 
-export default Client
-
 export const SignInUser = async (data) => {
   try {
-    const res = await Client.post('auth/login', data)
+    const res = await Client.post('/auth/login', data)
     localStorage.setItem('token', res.data.token)
     localStorage.setItem('id', res.data.user.id)
     localStorage.setItem('email', res.data.user.email)
@@ -31,7 +29,7 @@ export const SignInUser = async (data) => {
 
 export const RegisterUser = async (data) => {
   try {
-    const res = await Client.post('auth/register', data)
+    const res = await Client.post('/auth/register', data)
     return res.data
   } catch (error) {
     throw error
@@ -40,9 +38,11 @@ export const RegisterUser = async (data) => {
 
 export const CheckSession = async () => {
   try {
-    const res = await Client.get('auth/session')
-    return res.data
+    const res = await Client.get('/auth/session')
+    return res.data.token
   } catch (error) {
     throw error
   }
 }
+
+export default Client

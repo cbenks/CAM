@@ -25,7 +25,7 @@ const Login = ({toggleAuthenticated, setUser}) => {
         <form onSubmit={handleSubmit}>
           <div>
             <label htmlFor="email">Email</label>
-            <input onChange={handleChange} name="email" type="email" id="email" value={formValues.password} required />
+            <input onChange={handleChange} name="email" type="email" id="email" value={formValues.email} required />
           </div>
           <div>
             <label htmlFor="password">Password</label>
