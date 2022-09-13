@@ -1,6 +1,7 @@
 import Nav from './components/Nav'
 import Home from './pages/Home'
 import Assets from './pages/Assets'
+import News from './pages/News'
 import Register from './pages/Register'
 import Client from './authentication/auth'
 import './App.css'
@@ -30,6 +31,7 @@ function App() {
       id,
       email
     })
+    console.log(user)
     toggleAuthenticated(true)
   }
 
@@ -38,16 +40,16 @@ function App() {
     if (token) {
       checkToken()
     }
-    // const getUsername = async () => {
-    //   if (user && authenticated) {
-    //     const singleUser = await Client.get(`user/${user.id}`)
-    //     localStorage.setItem('username', singleUser.data.username)
-    //     const savedUsername = localStorage.getItem('username')
-    //     setUsername(savedUsername)
-    //   }
-    // }
-    // getUsername()
-  }, [user])
+    const getUsername = async () => {
+      if (user && authenticated) {
+        const singleUser = await Client.get(`user/${user.id}`)
+        localStorage.setItem('username', singleUser.data.username)
+        const savedUsername = localStorage.getItem('username')
+        setUsername(savedUsername)
+      }
+    }
+    getUsername()
+  }, [])
 
   return (
     <div>
@@ -71,7 +73,11 @@ function App() {
           />
           <Route
             path="/assets"
-            element={<Assets authenticated={authenticated} />}
+            element={<Assets authenticated={authenticated} user={user} />}
+          />
+          <Route
+            path="/news"
+            element={<News authenticated={authenticated} />}
           />
           <Route path="/register" element={<Register />} />
         </Routes>
