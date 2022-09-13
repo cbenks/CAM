@@ -15,19 +15,39 @@ const AddCrypto = ({ authenticated, user }) => {
   })
 
   const handleChangeCrypto = (e) => {
-
+    setCryptoForm({...cryptoForm, [e.target.name]: e.target.value})
   }
 
   const handleChangeNft = (e) => {
-
+    setNftForm({...nftForm, [e.target.name]: e.target.value})
   }
 
-  const handleSubmitCrypto = (e) => {
-
+  const handleSubmitCrypto = async (e) => {
+    e.preventDefault()
+    await Client.post('/crypto/', {
+      userId: user.id,
+      amount: cryptoForm.amount,
+      name: cryptoForm.name
+    })
+    setCryptoForm({
+      name: '',
+      amount: 0
+    })
   }
 
-  const handleSubmitNft = (e) => {
-
+  const handleSubmitNft = async (e) => {
+    e.preventDefault()
+    await Client.post('/nft/', {
+      userId: user.id,
+      blockchain: nftForm.blockchain,
+      name: nftForm.name,
+      photo: nftForm.photo
+    })
+    setNftForm({
+      blockchain: '',
+      name: '',
+      photo: ''
+    })
   }
 
   let publicOptions =(
@@ -50,7 +70,7 @@ const AddCrypto = ({ authenticated, user }) => {
         <label htmlFor="name">Name</label>
         <input onChange={handleChangeNft} name="name" id="name" type="text" value={nftForm.name} />
         <label htmlFor="photo">Photo</label>
-        <input onChange={handleChangeNft} name="photo" id="photo" type="image" value={nftForm.name} />
+        <input onChange={handleChangeNft} name="photo" id="photo" type="text" value={nftForm.photo} />
         <button disabled={!nftForm.name} >Add Nft Asset</button>
       </form>
     </div>
