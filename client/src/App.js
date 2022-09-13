@@ -89,7 +89,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route
             path="/add"
-            element={<AddCrypto authenticated={authenticated} />}
+            element={<AddCrypto authenticated={authenticated} user={user} />}
           />
         </Routes>
       </main>
