@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 const Assets = ({ authenticated, user, username }) => {
   const [crypto, setCrypto] = useState([])
   const [nft, setNft] = useState([])
+  const [edit, toggleEdit] = useState(false)
 
   useEffect(() => {
     const showCrypto = async () => {
