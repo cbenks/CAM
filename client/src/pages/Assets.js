@@ -1,3 +1,5 @@
+import Crypto from '../components/Crypto'
+import Nft from '../components/Nft'
 import Client from '../authentication/auth'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
@@ -32,37 +34,21 @@ const Assets = ({ authenticated, user, username }) => {
         <h3>User {username}'s Crypto</h3>
 
         {crypto.map((crypto) => (
-          <div key={crypto.id}>
-            <span>{crypto.amount} </span>
-            <span> {crypto.name} </span>
-            <button
-              onClick={async () => {
-                const cryptoDelete = parseInt(crypto.id)
-                await Client.delete(`/crypto/${cryptoDelete}`)
-                document.location.reload()
-              }}
-            >
-              x
-            </button>
-            <button>Edit</button>
-          </div>
+          <Crypto
+            crypto={crypto}
+            key={crypto.id}
+            authenticated={authenticated}
+            user={user}
+          />
         ))}
         <h3>Nfts</h3>
         {nft.map((nft) => (
-          <div key={nft.id}>
-            <h3>{nft.name}</h3>
-            <img src={nft.photo} alt="" />
-            <h4>{nft.blockchain} </h4>
-            <button
-              onClick={async () => {
-                const nftDelete = parseInt(nft.id)
-                await Client.delete(`/nft/${nftDelete}`)
-                document.location.reload()
-              }}
-            >
-              x
-            </button>
-          </div>
+          <Nft
+            nft={nft}
+            key={nft.id}
+            authenticated={authenticated}
+            user={user}
+          />
         ))}
         <h3>
           Add more assets <Link to="/add">HERE</Link>
