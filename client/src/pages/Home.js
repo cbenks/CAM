@@ -38,7 +38,7 @@ const Home = ({ authenticated, toggleAuthenticated, setUser, username }) => {
           non-fungible tokens you may have!
         </p>
         <h1 className="sec">
-          Enter CM - the free easy to use oranganizational tool for your web3
+          Enter CM - the free easy to use organizational tool for your web3
           needs
         </h1>
       </section>
