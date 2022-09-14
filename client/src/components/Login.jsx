@@ -22,16 +22,16 @@ const Login = ({toggleAuthenticated, setUser}) => {
   return (
     <div>
       <div>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="email">Email</label>
-            <input onChange={handleChange} name="email" type="email" id="email" value={formValues.email} required />
+        <form className="login" onSubmit={handleSubmit}>
+          <div className="input">
+            <label htmlFor="email">Email:</label>
+            <input onChange={handleChange} name="email" type="email" id="email" value={formValues.email}required />
           </div>
-          <div>
-            <label htmlFor="password">Password</label>
-            <input onChange={handleChange}  name="password" type="password" id="password" value={formValues.password} required />
+          <div className="input">
+            <label htmlFor="password">Password:</label>
+            <input onChange={handleChange}  name="password" type="password" id="password" value={formValues.password}required />
           </div>
-          <button disabled={!formValues.email || !formValues.password}>Login</button>
+          <button className="formbut" disabled={!formValues.email || !formValues.password}>Login</button>
         </form>
       </div>
     </div>

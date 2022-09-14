@@ -89,7 +89,7 @@ nav a:hover {
 
 .about{
   margin-left: 100px;
-  width: 50%;
+  width: 60%;
 }
 
 .sec {
@@ -106,11 +106,33 @@ ul {
   font-size: 2ch;
 }
 
+p {
+  font-size: 2ch;
+}
 
 
 /* LOGIN */
 
+.login{
+  border: 5px #0c2461;
+}
 
+.input{
+  font-family: 'Inconsolata', monospace;
+  margin: 5px;
+}
+
+input {
+  border-radius: 8px;
+}
+
+.formbut{
+  background-color: white;
+  border-radius: 10px;
+  min-width: 6em;
+  min-height: 2em;
+  font-family: 'Inconsolata', monospace;
+}
 
 
 
@@ -121,7 +143,10 @@ ul {
 /* REGISTER */
 
 
-
+.registerform {
+  display: flex;
+  justify-content: center;
+}
 
 
 

@@ -33,8 +33,8 @@ const Register = () => {
   return (
     <div>
       <div>
-        <form onSubmit={handleSubmit}>
-          <div>
+        <form className="registerform" onSubmit={handleSubmit}>
+          <div className="input">
             <label htmlFor="username">Username</label>
             <input
               onChange={handleChange}
@@ -45,7 +45,7 @@ const Register = () => {
               required
             />
           </div>
-          <div>
+          <div className="input">
             <label htmlFor="username">Email</label>
             <input
               onChange={handleChange}
@@ -56,7 +56,7 @@ const Register = () => {
               required
             />
           </div>
-          <div>
+          <div className="input">
             <label htmlFor="password">Password</label>
             <input
               onChange={handleChange}
@@ -67,7 +67,7 @@ const Register = () => {
               required
             />
           </div>
-          <div>
+          <div className="input">
             <label htmlFor="confirmPassword">Confirm Password</label>
             <input
               onChange={handleChange}
@@ -79,6 +79,7 @@ const Register = () => {
             />
           </div>
           <button
+            className="formbut"
             disabled={
               !formValues.email ||
               !formValues.password ||
