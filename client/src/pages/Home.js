@@ -2,7 +2,7 @@ import Login from '../components/Login'
 
 const Home = ({ authenticated, toggleAuthenticated, setUser, username }) => {
   const authenticatedOptions = (
-    <div>
+    <div className="welcome">
       <h2>Welcome {username}</h2>
     </div>
   )
@@ -16,15 +16,19 @@ const Home = ({ authenticated, toggleAuthenticated, setUser, username }) => {
   return (
     <div className="home">
       {authenticated ? authenticatedOptions : publicOptions}
-      <section>
-        <h2>What is CM? Well let me tell you...</h2>
+      <section className="about">
+        <h1 className="sec">
+          <em>What is CM? </em>
+        </h1>
         <p>
           CM stands for Crypto management. It is an application where you can
           easily keep track of all of your current web3 assets in one place
         </p>
       </section>
-      <section>
-        <h3>Why use CM?</h3>
+      <section className="about">
+        <h1 className="sec">
+          <i>Why use CM?</i>
+        </h1>
         <p>
           If you are involved in web3, things can messy quickly. Between the
           different exchanges you may find yourself using to get those off the
@@ -33,21 +37,21 @@ const Home = ({ authenticated, toggleAuthenticated, setUser, username }) => {
           convoluted and overwhelming quick. Oh and lets not forget about any
           non-fungible tokens you may have!
         </p>
-        <h3>
-          Enter CM, the free easy to use oranganizational tool for your web3
-          needs.
-        </h3>
+        <h1 className="sec">
+          Enter CM - the free easy to use oranganizational tool for your web3
+          needs
+        </h1>
       </section>
-      <section>
-        <h3>But wait, there's more...</h3>
+      <section className="about">
+        <h1 className="sec">But wait, there's more to come...</h1>
         <ul>
-          <li>Daily news feed</li>
-          <li>Live prices</li>
-          <li>Average price column</li>
-          <li>Total Value column</li>
+          <li>-Daily news feed</li>
+          <li>-Live prices</li>
+          <li>-Average price column</li>
+          <li>-Total Value column</li>
         </ul>
       </section>
-      <span>Developed by Cory Benicak</span>
+      <div className="me">Developed by Cory B</div>
     </div>
   )
 }

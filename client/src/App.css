@@ -1,7 +1,8 @@
 /* font-family: 'Playfair Display', serif; */
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Playfair+Display&display=swap');
 /* font-family: 'Inconsolata', monospace; */
-
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+/* font-family: 'Permanent Marker', cursive; */
 
 :root {
   --color-1: #1e3799;
@@ -16,6 +17,9 @@
 
 .head {
   border: 10px;
+  min-height: 50% !important;
+  height: 100px;
+  margin: 0;
 }
 
 .nav{
@@ -39,7 +43,8 @@ nav a {
 }
 
 nav a:hover {
-  text-decoration-color: var(--color-1);
+  text-decoration-color: var(--color-4);
+  color: var(--color-4);
 }
 
 .logout {
@@ -49,7 +54,7 @@ nav a:hover {
   font-size: 20px;
   min-height: 4ch;
   min-width: 8ch;
-  margin-left: 110%;
+  margin-left: 130%;
   background-color: var(--color-1);
   color:white;
 }
@@ -57,6 +62,10 @@ nav a:hover {
 .logout:active {
   box-shadow: 0 4px #666;
   transform: translateY(4px);
+}
+
+.logout:hover {
+  background-color: var(--color-4);
 }
 
 
@@ -71,12 +80,31 @@ nav a:hover {
 
 .home {
   font-family: 'Playfair Display', serif;
+  margin: 2%;
+}
+.welcome{
+  color: var(--color-3);
+  font-size: 2.5ch;
 }
 
+.about{
+  margin-left: 100px;
+  width: 50%;
+}
 
+.sec {
+  color: var(--color-4);
+}
 
+ul {
+  list-style: none;
+}
 
-
+.me{
+  margin-top: 50px;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 2ch;
+}
 
 
 
