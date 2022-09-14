@@ -1,10 +1,9 @@
 import {Link} from 'react-router-dom'
 
-const Nav = ({ authenticated, handleLogout, username }) => {
+const Nav = ({ authenticated, handleLogout }) => {
 
   let authenticatedOptions = (
     <nav className='nav'>
-      <h3>Welcome {username}</h3>
       <Link to="/assets">Assets</Link>
       <Link to="/news">News</Link>
       <button onClick={handleLogout} >Log Out</button>

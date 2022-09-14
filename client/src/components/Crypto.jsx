@@ -1,7 +1,9 @@
 import Client from '../authentication/auth'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Crypto = ({ crypto, authenticated, user }) => {
+  let navigate = useNavigate()
   const [edit, toggleEdit] = useState(false)
   const [update, setUpdate] =useState({
     amount: 0
@@ -19,6 +21,7 @@ const Crypto = ({ crypto, authenticated, user }) => {
       amount: update.amount,
       name: crypto.name
     })
+    navigate('/')
   }
 
 
@@ -30,7 +33,8 @@ const Crypto = ({ crypto, authenticated, user }) => {
           <div>
             <form onSubmit={handleSubmit} >
               <label htmlFor="amount">Amount</label>
-              <input onChange={handleChange} name="amount" id="amount" type="number" value={crypto.amount} required/>
+              <input onChange={handleChange} name="amount" id="amount" type="number" value={update.amount} required/>
+              <button>update</button>
             </form>
           </div>
         ) : (null)}

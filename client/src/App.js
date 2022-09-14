@@ -36,17 +36,15 @@ function App() {
     toggleAuthenticated(true)
   }
 
-  useEffect((user, authenticated) => {
+  useEffect((authenticated, user) => {
     const token = localStorage.getItem('token')
     if (token) {
       checkToken()
     }
     const getUsername = async () => {
-      if (user && authenticated) {
-        const singleUser = await Client.get(`/user/${user.id}`)
-        localStorage.setItem('username', singleUser.data.username)
-        const getSavedUsername = localStorage.getItem('username')
-        setUsername(getSavedUsername)
+      if (authenticated) {
+        let res = await Client.get(`/user/${user.id}`)
+        setUsername(res.data.username)
       }
     }
     getUsername()
@@ -69,6 +67,7 @@ function App() {
                 user={user}
                 toggleAuthenticated={toggleAuthenticated}
                 setUser={setUser}
+                username={username}
               />
             }
           />

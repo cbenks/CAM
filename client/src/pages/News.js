@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom'
 
 const News = ({ authenticated }) => {
-  let authenticatedOptions = <div></div>
+  let authenticatedOptions = (
+    <div>
+      <h3>This feature is currently in developmen, stay tuned!</h3>
+    </div>
+  )
 
   let publicOptions = (
     <div>
