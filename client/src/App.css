@@ -154,15 +154,26 @@ input {
 
 /* ASSETS */
 
+.assets {
+  display: flex;
+  justify-content: center;
+  font-family: 'Inconsolata', monospace;
+}
 
-
+.assetsuser {
+  font-size: 4ch;
+}
 
 
 
 
 /* ADD CRYPTO */
 
-
+.assbut{
+  background-color: white;
+  border-radius: 10px;
+  font-family: 'Inconsolata', monospace;
+}
 
 
 
@@ -179,3 +190,11 @@ input {
 
 
 /* NFT */
+
+.nft{
+  margin-bottom:100px;
+}
+
+.nftphoto{
+  height: 300px;
+}

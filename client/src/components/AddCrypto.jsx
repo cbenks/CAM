@@ -67,7 +67,7 @@ const AddCrypto = ({ authenticated, user }) => {
         <input onChange={handleChangeCrypto} name="name" id="name" type="text" value={cryptoForm.name} required />
         <label htmlFor="amount">Amount</label>
         <input onChange={handleChangeCrypto} name="amount" id="amount" type="number" value={cryptoForm.amount} required/>
-        <button disabled={!cryptoForm.name} >Add Crypto Asset</button>
+        <button className="formbut" disabled={!cryptoForm.name} >Add Crypto Asset</button>
       </form>
       <form onSubmit={handleSubmitNft} >
         <label htmlFor="blockchain">Blockchain</label>
@@ -76,7 +76,7 @@ const AddCrypto = ({ authenticated, user }) => {
         <input onChange={handleChangeNft} name="name" id="name" type="text" value={nftForm.name} />
         <label htmlFor="photo">Photo</label>
         <input onChange={handleChangeNft} name="photo" id="photo" type="text" value={nftForm.photo} />
-        <button disabled={!nftForm.name} >Add Nft Asset</button>
+        <button className="formbut" disabled={!nftForm.name} >Add Nft Asset</button>
       </form>
     </div>
   )

@@ -1,17 +1,19 @@
 import Client from '../authentication/auth'
+import { useNavigate } from 'react-router-dom'
 
 const Nft = ({ nft }) => {
+  let navigate = useNavigate()
 
   return(
-    <div>
+    <div className="nft">
       <h3>{nft.name}</h3>
-      <img src={nft.photo} alt="" />
+      <img className="nftphoto" src={nft.photo} alt="" />
       <h4>{nft.blockchain} </h4>
-      <button
+      <button className="assbut"
         onClick={async () => {
           const nftDelete = parseInt(nft.id)
           await Client.delete(`/nft/${nftDelete}`)
-          document.location.reload()
+          navigate("/home")
         }}
       >
         x

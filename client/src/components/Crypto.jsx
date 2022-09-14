@@ -34,7 +34,7 @@ const Crypto = ({ crypto, authenticated, user }) => {
             <form onSubmit={handleSubmit} >
               <label htmlFor="amount">Amount</label>
               <input onChange={handleChange} name="amount" id="amount" type="number" value={update.amount} required/>
-              <button>update</button>
+              <button className="formbut">update</button>
             </form>
           </div>
         ) : (null)}
@@ -42,16 +42,16 @@ const Crypto = ({ crypto, authenticated, user }) => {
       <div>
         <span>{crypto.amount} </span>
         <span> {crypto.name} </span>
-        <button
+        <button className="assbut"
           onClick={async () => {
             const cryptoDelete = parseInt(crypto.id)
             await Client.delete(`/crypto/${cryptoDelete}`)
-            document.location.reload()
+            navigate("/home")
           }}
         >
           x
         </button>
-        <button onClick={() => {
+        <button className="formbut" onClick={() => {
             toggleEdit(true)
           }} >Edit</button>
       </div>

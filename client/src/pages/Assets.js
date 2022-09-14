@@ -29,9 +29,9 @@ const Assets = ({ authenticated, user, username }) => {
     </div>
   )
   const authenticatedOptions = (
-    <div>
+    <div className="assets">
       <div>
-        <h3>User {username}'s Crypto</h3>
+        <h3 className="assetsuser">User {username}'s Crypto</h3>
 
         {crypto.map((crypto) => (
           <Crypto
