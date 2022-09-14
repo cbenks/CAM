@@ -173,6 +173,7 @@ input {
   background-color: white;
   border-radius: 10px;
   font-family: 'Inconsolata', monospace;
+  margin: 8px;
 }
 
 
@@ -182,8 +183,14 @@ input {
 
 /* CRYPTO */
 
+.cryptoamt {
+  margin: 10px;
+  font-size: 3ch;
+}
 
-
+.cryptonm{
+  font-size: 3ch;
+}
 
 
 

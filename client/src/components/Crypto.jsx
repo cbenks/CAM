@@ -40,13 +40,13 @@ const Crypto = ({ crypto, authenticated, user }) => {
         ) : (null)}
       </div>
       <div>
-        <span>{crypto.amount} </span>
-        <span> {crypto.name} </span>
+        <span className="cryptoamt">{crypto.amount} </span>
+        <span className="cryptonm"> {crypto.name} </span>
         <button className="assbut"
           onClick={async () => {
             const cryptoDelete = parseInt(crypto.id)
             await Client.delete(`/crypto/${cryptoDelete}`)
-            navigate("/home")
+            navigate("/")
           }}
         >
           x

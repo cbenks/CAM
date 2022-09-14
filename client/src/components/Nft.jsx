@@ -7,13 +7,13 @@ const Nft = ({ nft }) => {
   return(
     <div className="nft">
       <h3>{nft.name}</h3>
+      <h4>on the {nft.blockchain} blockchain</h4>
       <img className="nftphoto" src={nft.photo} alt="" />
-      <h4>{nft.blockchain} </h4>
       <button className="assbut"
         onClick={async () => {
           const nftDelete = parseInt(nft.id)
           await Client.delete(`/nft/${nftDelete}`)
-          navigate("/home")
+          navigate("/")
         }}
       >
         x
