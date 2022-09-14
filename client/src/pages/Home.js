@@ -38,6 +38,16 @@ const Home = ({ authenticated, toggleAuthenticated, setUser, username }) => {
           needs.
         </h3>
       </section>
+      <section>
+        <h3>But wait, there's more...</h3>
+        <ul>
+          <li>Daily news feed</li>
+          <li>Live prices</li>
+          <li>Average price column</li>
+          <li>Total Value column</li>
+        </ul>
+      </section>
+      <span>Developed by Cory Benicak</span>
     </div>
   )
 }
