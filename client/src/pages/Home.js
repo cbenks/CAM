@@ -14,7 +14,7 @@ const Home = ({ authenticated, toggleAuthenticated, setUser, username }) => {
   )
 
   return (
-    <div>
+    <div className="home">
       {authenticated ? authenticatedOptions : publicOptions}
       <section>
         <h2>What is CM? Well let me tell you...</h2>

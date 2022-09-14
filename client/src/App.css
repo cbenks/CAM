@@ -1,17 +1,128 @@
+/* font-family: 'Playfair Display', serif; */
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Playfair+Display&display=swap');
+/* font-family: 'Inconsolata', monospace; */
+
+
+:root {
+  --color-1: #1e3799;
+  --color-2: #0c2461;
+  --color-3: #0a3d62;
+  --color-4: rgb(71, 117, 244);
+}
+
+
+
 /* NAV */
+
+.head {
+  border: 10px;
+}
 
 .nav{
   display: flex;
   align-items: center;
-  font-size: 1em;
+  font-size: 1.5em;
+  font-family: 'Inconsolata', monospace;
+  background-color: white;
 }
 
 .logo{
-  width: 15%;
+  width: 22%;
   border-radius: 8%;
+  margin-left: 5%;
 }
 
 nav a {
   margin: auto 1em;
+  text-decoration-color:white ;
+  color:var(--color-1);
 }
 
+nav a:hover {
+  text-decoration-color: var(--color-1);
+}
+
+.logout {
+  align-self: flex-start;
+  background-color: white;
+  border-radius: 13px;
+  font-size: 20px;
+  min-height: 4ch;
+  min-width: 8ch;
+  margin-left: 110%;
+  background-color: var(--color-1);
+  color:white;
+}
+
+.logout:active {
+  box-shadow: 0 4px #666;
+  transform: translateY(4px);
+}
+
+
+
+
+
+
+
+
+
+/* HOME */
+
+.home {
+  font-family: 'Playfair Display', serif;
+}
+
+
+
+
+
+
+
+
+/* LOGIN */
+
+
+
+
+
+
+
+
+
+/* REGISTER */
+
+
+
+
+
+
+
+
+/* ASSETS */
+
+
+
+
+
+
+
+/* ADD CRYPTO */
+
+
+
+
+
+
+
+
+/* CRYPTO */
+
+
+
+
+
+
+
+
+/* NFT */
