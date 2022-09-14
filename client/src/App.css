@@ -71,11 +71,6 @@ nav a:hover {
 
 
 
-
-
-
-
-
 /* HOME */
 
 .home {
@@ -204,4 +199,5 @@ input {
 
 .nftphoto{
   height: 300px;
+  border-radius: 12px;
 }
