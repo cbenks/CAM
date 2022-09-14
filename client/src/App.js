@@ -28,12 +28,22 @@ function App() {
     const num = localStorage.getItem('id')
     const id = parseInt(num)
     const email = localStorage.getItem('email')
+    const username = localStorage.getItem('username')
     setUser({
       theUser,
       id,
-      email
+      email,
+      username
     })
     toggleAuthenticated(true)
+  }
+
+  const getUsername = async () => {
+    if (authenticated) {
+      let res = await Client.get(`/user/${user.id}`)
+      setUsername(res.data.username)
+      console.log(res.data.username)
+    }
   }
 
   useEffect((authenticated, user) => {
@@ -41,15 +51,8 @@ function App() {
     if (token) {
       checkToken()
     }
-    const getUsername = async () => {
-      if (authenticated) {
-        let res = await Client.get(`/user/${user.id}`)
-        setUsername(res.data.username)
-      }
-    }
     getUsername()
   }, [])
-
   return (
     <div>
       <Nav
