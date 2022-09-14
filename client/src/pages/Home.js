@@ -22,7 +22,7 @@ const Home = ({ authenticated, toggleAuthenticated, setUser, username }) => {
         </h1>
         <p>
           CM stands for Crypto management. It is an application where you can
-          easily keep track of all of your current web3 assets in one place
+          easily keep track of all of your current web3 assets in one place.
         </p>
       </section>
       <section className="about">
@@ -49,6 +49,8 @@ const Home = ({ authenticated, toggleAuthenticated, setUser, username }) => {
           <li>-Live prices</li>
           <li>-Average price column</li>
           <li>-Total Value column</li>
+          <li>-Where the asset is being stored</li>
+          <li>-Mobile-friendly</li>
         </ul>
       </section>
       <div className="me">Developed by Cory B</div>
